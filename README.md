@@ -5,10 +5,12 @@ Maybe.
 
 Made with `react` and `create-react-app`.
 
-# App
+# App / Use
 
-See the app running here:  
+See the running app here:  
 [https://mocking.rocks](https://mocking.rocks)
+
+This repository is not auto-deployed, the app running at mocking.rocks may or may not be sync'd with the code from this repository.
 
 # License
 
