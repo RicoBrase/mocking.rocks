@@ -11,6 +11,8 @@ function generateNewBtnText() {
 
 function App() {
 
+  const originalFooterText = "This app is OpenSource on Github!";
+  const [footerText, setFooterText] = useState(originalFooterText);
   const [btnText, setBtnText] = useState(chosenBtnText)
   const [textToMock, setTextToMock] = useState("");
   const handleTextToMockChange = (e: FormEvent) => setTextToMock((e.target as HTMLTextAreaElement).value);
@@ -41,12 +43,22 @@ function App() {
 
   return (
     <div className="app-container">
-    <div className="mocker">
-      <textarea placeholder="Input the text to mock here..." onChange={handleTextToMockChange}></textarea>
-      <div className="mock-btn-container">
-        <MockBtn text={btnText} clickEventHandler={() => {copyToClipboard(mockText(textToMock))}}></MockBtn>
+      <div className="mocker">
+        <textarea placeholder="Input the text to mock here..." onChange={handleTextToMockChange}></textarea>
+        <div className="mock-btn-container">
+          <MockBtn text={btnText} clickEventHandler={() => {copyToClipboard(mockText(textToMock))}}></MockBtn>
+        </div>
       </div>
-    </div>
+      <footer>
+        <a
+          onMouseOver={() => setFooterText(mockText(originalFooterText))}
+          onMouseLeave={() => setFooterText(originalFooterText)}
+          href="https://github.com/RicoBrase/mocking.rocks"
+        >
+          <p>{footerText}</p>
+          <p>https://github.com/RicoBrase/mocking.rocks</p>
+        </a>
+      </footer>
     </div>
   );
 }
