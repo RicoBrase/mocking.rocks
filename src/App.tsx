@@ -15,7 +15,12 @@ function App() {
   const [footerText, setFooterText] = useState(originalFooterText);
   const [btnText, setBtnText] = useState(chosenBtnText)
   const [textToMock, setTextToMock] = useState("");
-  const handleTextToMockChange = (e: FormEvent) => setTextToMock((e.target as HTMLTextAreaElement).value);
+  const [mockedText, setMockedText] = useState("");
+  const handleTextToMockChange = (e: FormEvent) => {
+    const inputVal = (e.target as HTMLTextAreaElement).value;
+    setTextToMock(inputVal);
+    setMockedText(mockText(inputVal));
+  };
 
   const mockText = (input: string) => {
     let previousCharLowercase = false;
@@ -38,6 +43,7 @@ function App() {
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
     setBtnText("« COPIED »");
+    setMockedText(text);
     setTimeout(() => setBtnText(generateNewBtnText()), 1000);
   };
 
@@ -48,6 +54,13 @@ function App() {
         <div className="mock-btn-container">
           <MockBtn text={btnText} clickEventHandler={() => {copyToClipboard(mockText(textToMock))}}></MockBtn>
         </div>
+        
+      { mockedText.length > 0 && (
+        <div className="mocked-text">
+          <p>{mockedText}</p>
+        </div>
+      ) }
+
       </div>
       <footer>
         <a

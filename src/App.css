@@ -43,6 +43,13 @@ body {
   box-shadow: 0.125rem 0.125rem 0.125rem rgba(0,0,0,0.1);
 }
 
+.mocker > .mocked-text > p {
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-family: "Arial", sans-serif;
+  color: #777;
+}
+
 .mock-btn-container {
   display: block;
   text-align: center;
