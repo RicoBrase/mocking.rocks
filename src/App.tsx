@@ -1,6 +1,7 @@
 import React, { FormEvent, useState } from 'react';
 import './App.css';
 import MockBtn from './MockBtn/MockBtn';
+import MockText from './Mocking';
 
 const possibleTexts = ["Go mock yourself!", "Mock me harder, daddy!", "Mock 'em all!"];
 const chosenBtnText = generateNewBtnText();
@@ -19,26 +20,10 @@ function App() {
   const handleTextToMockChange = (e: FormEvent) => {
     const inputVal = (e.target as HTMLTextAreaElement).value;
     setTextToMock(inputVal);
-    setMockedText(mockText(inputVal));
+    setMockedText(MockText(inputVal));
   };
 
-  const mockText = (input: string) => {
-    let previousCharLowercase = false;
-    const modifiedChars: string[] = [];
-    for(let c of input.split("")) {
-      if(/(?!\d)[\wäÄöÖüÜßẞ]/.test(c)) {
-        if(previousCharLowercase) {
-          modifiedChars.push(c.toUpperCase());
-        }else{
-          modifiedChars.push(c.toLowerCase());
-        }
-        previousCharLowercase = !previousCharLowercase;
-      }else{
-        modifiedChars.push(c);
-      }
-    }
-    return modifiedChars.join("");
-  };
+  
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -52,7 +37,7 @@ function App() {
       <div className="mocker">
         <textarea placeholder="Input the text to mock here..." onChange={handleTextToMockChange}></textarea>
         <div className="mock-btn-container">
-          <MockBtn text={btnText} clickEventHandler={() => {copyToClipboard(mockText(textToMock))}}></MockBtn>
+          <MockBtn text={btnText} clickEventHandler={() => {copyToClipboard(MockText(textToMock))}}></MockBtn>
         </div>
         
       { mockedText.length > 0 && (
@@ -64,7 +49,7 @@ function App() {
       </div>
       <footer>
         <a
-          onMouseOver={() => setFooterText(mockText(originalFooterText))}
+          onMouseOver={() => setFooterText(MockText(originalFooterText))}
           onMouseLeave={() => setFooterText(originalFooterText)}
           href="https://github.com/RicoBrase/mocking.rocks"
         >
