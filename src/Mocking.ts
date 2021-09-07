@@ -1,3 +1,9 @@
+/**
+ * Transforms the input text into it's mocked equivalent.
+ * tRaNsFoRmS tHe InPuT tExT iNtO iT's MoCkEd EqUiVaLeNt.
+ * @param input The text to mock.
+ * @returns tHe MoCkEd TeXt.
+ */
 const MockText = (input: string) => {
     let previousCharLowercase = false;
     const modifiedChars: string[] = [];
