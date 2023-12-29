@@ -1,38 +1,17 @@
-# create-svelte
+# mocking.rocks
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+This readme is work-in-progess and will be updated soon.
+Maybe.
 
-## Creating a project
+Made with `sveltekit` and [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
 
-If you're seeing this, you've probably already done this step. Congrats!
+# App / Use
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+See the running app here:  
+[https://mocking.rocks](https://mocking.rocks)
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+This repository is not auto-deployed, the app running at mocking.rocks may or may not be sync'd with the code from this repository.
 
-## Developing
+# License
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Licensed under [MIT License](LICENSE).
