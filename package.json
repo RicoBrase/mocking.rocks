@@ -27,5 +27,10 @@
 		"vite": "^8.0.0",
 		"vitest": "^5.0.2"
 	},
+	"overrides": {
+		"@sveltejs/kit@^2.70.3": {
+			"cookie": "^1.0.0"
+		}
+	},
 	"type": "module"
 }
