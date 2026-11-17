@@ -1,6 +1,6 @@
 <script lang="ts">
-	import MockButton from '$lib/components/MockButton.svelte';
-	import { mockThisText } from '$lib/mocking';
+	import MockButton from '#lib/components/MockButton.svelte';
+	import { mockThisText } from '#lib/mocking';
 
 	const possibleMockingButtonTexts = [
 		'Go mock yourself!',

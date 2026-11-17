@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { mockThisText } from '$lib/mocking';
+	import { mockThisText } from '#lib/mocking';
 
 	const footerText = 'This app is OpenSource on Github!';
 
